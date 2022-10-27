@@ -1,0 +1,23 @@
+function DessertsList(props) {
+    const lowCaloriesDesserts = props.data
+     // step 1: filter the list 
+   .filter((dessert) => { 
+     return dessert.calories < 500; 
+   })
+      // step 2: sort the list
+   .sort((a, b) => { 
+     return a.calories - b.calories; 
+   })
+      // step 3:  map the list
+   .map((dessert) => { 
+     return ( 
+       <li> 
+         {dessert.name} - {dessert.calories} cal 
+       </li> 
+     ); 
+   });
+    // return UL with data in data in {}
+    return <ul>{lowCaloriesDesserts}</ul>;
+  }
+  // export default function
+  export default DessertsList; 
